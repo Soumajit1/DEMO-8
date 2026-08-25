@@ -1,9 +1,19 @@
-# DEMO-8
- class Solution {
+class Solution {
 public:
-    int numTrees(int n) {
-        vector<int> f(n + 1);
-        f[0] = 1;
+    bool isValid(string s) {
+        string stk;
+        for (char c : s) {
+            if (c == '(' || c == '{' || c == '[')
+                stk.push_back(c);
+            else if (stk.empty() || !match(stk.back(), c))
+                return false;
+            else
+                stk.pop_back();
         }
-        return f[n];
- 
+        return stk.empty();
+    }
+
+    bool match(char l, char r) {
+        return (l == '(' && r == ')') || (l == '[' && r == ']') || (l == '{' && r == '}');
+    }
+};
