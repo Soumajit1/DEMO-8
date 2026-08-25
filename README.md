@@ -12,8 +12,7 @@ public:
         }
         return stk.empty();
     }
-
-    bool match(char l, char r) {
+   bool match(char l, char r) {
         return (l == '(' && r == ')') || (l == '[' && r == ']') || (l == '{' && r == '}');
     }
 };
