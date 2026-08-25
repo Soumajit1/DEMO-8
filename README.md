@@ -13,7 +13,6 @@ public:
         return stk.empty();
     }
    bool match(char l, char r) {
-        return (l == '(' && r == ')') || (l == '[' && r == ']') || (l == '{' && r == '}');
-    }
+        return (l == '(' && r == ')') || (l == '[' && r == ']') || (l == '{' && r == '}');GH,J   }
 };
  25.08.2026
