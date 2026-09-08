@@ -15,12 +15,7 @@ public:
             }
         }
         return f[n];
-    }
-};
-};
-
-
-class Solution {
+ution {
 public:
     int lengthOfLastWord(string s) {
         int i = s.size() - 1;
