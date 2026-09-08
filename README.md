@@ -7,14 +7,7 @@ public:
        class Solution {
 public:
     int numTrees(int n) {
-        vector<int> f(n + 1);
-        f[0] 
-        }
-        return i - j;
-    }
-};
-
-
+        vector<int
 class Solution {
 public:
     int lengthOfLastWord(string s) {
