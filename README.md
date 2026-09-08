@@ -8,15 +8,7 @@ public:
 public:
     int numTrees(int n) {
         vector<int> f(n + 1);
-        f[0] = 1;
-        for (int i = 1; i <= n; ++i) {
-            for (in
-        while (~i && s[i] == ' ') {
-            --i;
-        }
-        int j = i;
-        while (~j && s[j] != ' ') {
-            --j;
+        f[0] 
         }
         return i - j;
     }
