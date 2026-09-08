@@ -5,14 +5,5 @@ public:
         f[0] = 1;
         for (int i = 1; i <= n; ++i) {
        class Solution {
-public:
-    int numTrees(in{
-            --i;
-        }
-        int j = i;
-        while (~j && s[j] != ' ') {
-            --j;
-        }
-        return i - j;
-    }
+publi
 };
