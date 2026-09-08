@@ -6,13 +6,7 @@ public:
         for (int i = 1; i <= n; ++i) {
        class Solution {
 public:
-    int numTrees(int n) {
-        vector<int
-class Solution {
-public:
-    int lengthOfLastWord(string s) {
-        int i = s.size() - 1;
-        while (~i && s[i] == ' ') {
+    int numTrees(in{
             --i;
         }
         int j = i;
