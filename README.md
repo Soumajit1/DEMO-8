@@ -1,20 +1,4 @@
-class Solution {
-public:
-    int numTrees(int n) {
-        ve
-39. Combination Sum
-class Solution {
-public:
-39. Combination Sum
-class Solution {
-public:
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        sort(candidates.begin(), candidates.end());
-        vector<vector<int>> ans;
-        vector<int> t;
-            if (s == 0) {
-                ans.emplace_back(t);
-                return;
+
             }
             if (s < candidates[i]) {
                 return;
