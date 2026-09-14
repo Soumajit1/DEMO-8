@@ -5,11 +5,7 @@ private:
         n[0] = -1;
         int i = 0, pre = -1;
         int len = str.length();
-        while (i < len) {
-            while (pre >= 0 && str[i] != str[pre])
-                pre = n[pre];
-            ++i, ++pre;
-            if (i >= len)
+         if (i >= len)
                 break;
             if (str[i] == str[pre])
                 n[i] = n[pre];
