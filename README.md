@@ -29,6 +29,15 @@ public:
     }
 };
 
+public:(j, s - candidates[j]);
+                t.pop_back();
+            }
+        };
+        dfs(0, target);
+        return ans;
+    }
+};
+
 public:
     int strStr(string haystack, string needle) {
         if (0 == needle.length())
