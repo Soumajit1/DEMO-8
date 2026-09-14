@@ -4,16 +4,30 @@ private:
         vector<int> n(str.length());
         n[0] = -1;
         int i = 0, pre = -1;
-        int len = str.length();
-         if (i >= len)
-                break;
-            if (str[i] == str[pre])
-                n[i] = n[pre];
-            else
-                n[i] = pre;
-        }
-        return n;
+        int len = str.leclass Solution {
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        sort(candidates.begin(), candidates.end());
+        vector<vector<int>> ans;
+        vector<int> t;
+        function<void(int, int)> dfs = [&](int i, int s) {
+            if (s == 0) {
+                ans.emplace_back(t);
+                return;
+            }
+            if (s < candidates[i]) {
+                return;
+            }
+            for (int j = i; j < candidates.size(); ++j) {
+                t.push_back(candidates[j]);
+                dfs(j, s - candidates[j]);
+                t.pop_back();
+            }
+        };
+        dfs(0, target);
+        return ans;
     }
+};
 
 public:
     int strStr(string haystack, string needle) {
