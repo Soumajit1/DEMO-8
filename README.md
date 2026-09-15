@@ -2,11 +2,36 @@ class Solution {
 private:
     vector<int> Next(string str) {
         vector<int> n(str.length());
-        n[0] = -1;
-        int i = 0, pre = -1;
-        int len = str.leclass Solution {
+        n[0] = -1;/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
 public:
-    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* dummy = new ListNode(0, head);
+        ListNode* pre = dummy;
+        ListNode* cur = head;
+        while (cur) {
+            while (cur->next && cur->next->val == cur->val) {
+                cur = cur->next;
+            }
+            if (pre->next == cur) {
+                pre = cur;
+            } else {
+                pre->next = cur->next;
+            }
+            cur = cur->next;
+        }
+        return dummy->next;
+    }
+};ionSum(vector<int>& candidates, int target) {
         sort(candidates.begin(), candidates.end());
         vector<vector<int>> ans;
         vector<int> t;
