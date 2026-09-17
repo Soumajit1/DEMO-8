@@ -1,19 +1,24 @@
 class Solution {
 public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        sort(intervals.begin(), intervals.end());
-        int st = intervals[0][0], ed = intervals[0][1];
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        sort(candidates.begin(), candidates.end());
         vector<vector<int>> ans;
-        for (int i = 1; i < intervals.size(); ++i) {
-            if (ed < intervals[i][0]) {
-                ans.push_back({st, ed});
-                st = intervals[i][0];
-                ed = intervals[i][1];
-            } else {
-                ed = max(ed, intervals[i][1]);
+        vector<int> t;
+        function<void(int, int)> dfs = [&](int i, int s) {
+            if (s == 0) {
+                ans.emplace_back(t);
+                return;
             }
-        }
-        ans.push_back({st, ed});
+            if (s < candidates[i]) {
+                return;
+            }
+            for (int j = i; j < candidates.size(); ++j) {
+                t.push_back(candidates[j]);
+                dfs(j, s - candidates[j]);
+                t.pop_back();
+            }
+        };
+        dfs(0, target);
         return ans;
     }
 };
