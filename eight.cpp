@@ -7,7 +7,10 @@ public:
             for (int j = 0; j < i; ++j) {
                 f[i] += f[j] * f[i - j - 1];
             }
-        }class Solution {
+        }
+        return f[n];
+    }
+};class Solution {
 public:
     int numTrees(int n) {
         vector<int> f(n + 1);
@@ -19,5 +22,4 @@ public:
         }
         return f[n];
     }
-};
 };
